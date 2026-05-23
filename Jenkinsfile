@@ -1,13 +1,23 @@
 pipeline {
-    agent { label 'AGENTT1' }
-
+    agent {
+        node {
+            label 'AGENTT1'
+        }
+    }
     stages {
-        stage('Check Agent') {
+        stage('Build') {
             steps {
-                sh 'hostname'
-                sh 'whoami'
-                sh 'pwd'
-                echo "Agent connected successfully"
+               echo "Building"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying"
             }
         }
     }
