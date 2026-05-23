@@ -1,8 +1,6 @@
 pipeline {
     agent {
-        node {
-            label 'AGENTT1'
-        }
+        label 'AGENTT1'
     }
 
     stages {
@@ -14,13 +12,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo "testing"
+                echo "Testing"
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "deployingg"
+                echo "Deploying"
             }
         }
     }
