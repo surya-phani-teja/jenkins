@@ -1,10 +1,13 @@
 pipeline {
-    agent any
+    agent { label 'AGENTT1' }
 
     stages {
-        stage('Test') {
+        stage('Check Agent') {
             steps {
-                echo "Hello"
+                sh 'hostname'
+                sh 'whoami'
+                sh 'pwd'
+                echo "Agent connected successfully"
             }
         }
     }
